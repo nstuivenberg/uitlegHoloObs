@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excellentieprogramma - HoloLens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="shortcut icon" href="http://www.rocmn.nl/themes/custom/rocmn/favicon.ico"
+          type="image/vnd.microsoft.icon">
+</head>
+<body>
+
+
+<nav class="toppie" id="myTopNav">
+    <a href="#" style="padding:2px; padding-left: 14px;">
+        <img src="../img/ROCWhite.svg" style="min-width: 77px; max-width: 77px;">
+    </a>
+    <a href="#">Installatie</a>
+    <a href="#">Eerste Project</a>
+    <a href="#">Deployen</a>
+    <a href="#">Version Control</a>
+    <a href="#">Spatial Mapping</a>
+    <a href="javascript:void(0);" style="font-size:17px;" class="icon" onclick="myFunction()">
+        &#9776;
+    </a>
+
+</nav>
+
+<div class="main">
+    <h1>Deployen van je Applicatie</h1>
+
+    <p>Deze pagina beschrijft het bekijken van je HoloLens applicatie in zowel de emulator als op
+    de HoloLens. We beginnen met de Emulator.</p>
+
+
+    <h2>Deployen naar je emulator</h2>
+    <p>
+        Hieronder beschrijven we in stappen hoe je jouw HoloLens applicatie kan bekijken in de
+        HoloLens emulator. Het deployen van de applicatie moet een twee eisen voldoen. HoloLens
+        werkt alleen met het Microsoft Store platform. Daarnaast moet het deployen gebeuren via
+        Visual Studio.
+    </p>
+    <ol>
+        <li>
+            We drukken op <span class="nadruk">File -> Build Settings</span> of
+            <span class="nadruk">Ctrl + Shift + B</span>. Als eerste drukken we daar op
+            <span class="cursief">Add Open Scenes</span>. Selecteer bij <span class="nadruk">
+            Platform</span> <span class="cursief">Universal Windows Platform</span>.
+
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_1.png" alt="Selecteer new"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+    </ol>
+
+
+        <h2>Slot</h2>
+        <p>
+            Hier eindigen we dit hoofdstuk. In het volgende hoofdstuk gaan we je laten zien hoe je
+            de applicatie in de HoloLens Emulator en op de HoloLens kunt laten draaien.
+        </p>
+
+</div>
+
+<div class="bottom">
+    <p>&copy; ROC Midden Nederland</p>
+</div>
+
+<div id="overlay" onclick="closeOverlay()">
+
+</div>
+<script src="../js/js.js"></script>
+</body>
+</html>

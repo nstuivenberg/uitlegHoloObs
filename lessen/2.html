@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excellentieprogramma - HoloLens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="shortcut icon" href="http://www.rocmn.nl/themes/custom/rocmn/favicon.ico"
+          type="image/vnd.microsoft.icon">
+</head>
+<body>
+
+
+<nav class="toppie" id="myTopNav">
+    <a href="#" style="padding:2px; padding-left: 14px;">
+        <img src="../img/ROCWhite.svg" style="min-width: 77px; max-width: 77px;">
+    </a>
+    <a href="../lessen/1.html">Les I</a>
+    <a href="../lessen/2.html">Les II</a>
+    <a href="../lessen/3.html">Les III</a>
+    <a href="../lessen/4.html">Les IV</a>
+    <a href="../lessen/5.html">Les V</a>
+    <a href="../lessen/6.html">Les VI</a>
+    <a href="../lessen/7.html">Les VII</a>
+
+    <a href="javascript:void(0);" style="font-size:17px;" class="icon" onclick="myFunction()">
+        &#9776;
+    </a>
+
+</nav>
+
+<div class="main">
+    <h1 id="topLink">Les 2 - Jouw eerste HoloLens project</h1>
+
+    <p>Welkom bij de tweede les. Aan het eind van deze les </p>
+    <ul>
+        <li><span class="cursief">Weet je</span> hoe een project in Unity voor de HoloLens kunt
+            configureren.
+        </li>
+        <li><span class="cursief">Heb je</span> een basiskennis van waar en wat in Unity</li>
+        <li>heb je je eerste 3D-modellen toegevoegd in Unity</li>
+        <li>
+            <span class="cursief">Weet je</span> hoe je jouw applicatie kunt deployen naar zowel de
+            emulator als de HoloLens.
+        </li>
+        <li><span class="cursief">Kun je</span> jouw eigen applicatie bekijken.</li>
+
+    </ul>
+
+
+
+    <h2>Inhoudsopgave</h2>
+    <ol>
+        <li class="inhoudsopgave"><a href="#h1">Jouw eerste project</a>
+            <ol class="submenu">
+                <li class="inhoudsopgavesub"><a href="#h11">Project aanmaken</a></li>
+                <li class="inhoudsopgavesub"><a href="#h12">3D-Modellen toevoegen</a></li>
+            </ol>
+        </li>
+        <li class="inhoudsopgave">
+            <a href="#h2">Deployen</a>
+            <ol class="submenu">
+                <li class="inhoudsopgavesub"><a href="#h21">Gereedmaken voor deployment</a></li>
+                <li class="inhoudsopgavesub"><a href="#h22">Deployen naar Emulator</a></li>
+                <li class="inhoudsopgavesub"><a href="#h23">Deployen naar HoloLens</a></li>
+            </ol>
+        </li>
+        <li class="inhoudsopgave"><a href="#hSlot">Slot</a></li>
+    </ol>
+
+
+    <h2 id="h1">1: Jouw eerste project</h2>
+    <p>
+        Je hebt de vorige les twee programma's geinstalleerd om je applicatie te ontwikkelen. Dat
+        zijn Unity en Microsoft's Visual Studio. Unity wordt gebruikt om de scenes (denk aan een
+        scene op een toneel) vorm te geven. Visual Studio gebruiken we als IDE om de C# code aan te
+        passen.
+    </p>
+
+    <p>We beginnen dit hoofdstuk in Unity.</p>
+
+
+
+    <h3 id="h11">1.1: Project aanmaken</h3>
+    <p>
+        Hieronder staat eenn stapsgewijze instructie om jowu eerste HoloLens-project aan te maken.
+        Eerst behandelen we het aanmaken van een project, het importeren van de benodigde
+        <span class="cursief">Assets</span> en als laatste het toevoegen van 3D-modellen.
+    </p>
+    <ol>
+        <li>
+            Als eerste gaan we een nieuw project maken. Dat doen we door op
+            'new' te drukken.
+
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_1.png" alt="Selecteer new"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>Geef het project een naam en kies de locatie waar je het project wilt opslaan. Zorg
+            dat de overige setings zoals hieronder zijn.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_2.png" alt="Project settings" onclick="overlay(this)"
+                         class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Als het goed is, bestaat je Unity-omgeving uit drie onderdelen. Links je 'Hierarchy',
+            in het midden 'Game', 'Animator' en 'Animation', en rechts 'Inspector' en 'Services'.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_three_parts.png" alt="Remove main camera"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+            <ul>
+                <li><span class="cursief">Hierarchy</span> laat de visuele elementen van je scene
+                    zien.</li>
+                <li><span class="cursief">Game </span>laat zien hoe de game gerenderd wordt. </li>
+                <li><span class="cursief">Het scene paneel</span> laat de elementen zien die je in
+                    de 3D wereld hebt geplaatst. Deze kun je onder andere hier aanpassen.</li>
+                <li><span class="cursief">De services</span> laten Unity gerelateerde services zien.
+                    Dit paneel is gloednieuw. Misschien krijgt deze bruikbare features in de
+                    toekomst.</li>
+                <li><span class="cursief">Inspector</span> geeft de mogelijkheid om de geselecteerde
+                    elementen aan te passen.</li>
+            </ul>
+        </li>
+        <li>
+            Om voor je HoloLens te ontwikkelen heeft Microsoft een toolkit ontwikkelt die het
+            ontwikkelen voor de o.a. de HoloLens makkelijker maakt. Deze kun je
+            <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases/">hier</a>
+            downloaden.
+        </li>
+        <li>Het zojuist gedownloade package gaan we nu in Unity importen. Druk op Assets ->
+            Import package -> Custom package. Selecteer het zojuist gedownloaden bestand.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_3.png" alt="Selecteer package"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Na het uitpakken vraagt Unity welke package je wilt importeren. Je moet hier alle
+            packages importen.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_4_extern.png" alt="Selecteer package"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Als alles is uitgepakt en geinstalleerd, ziet je Unity er zoals onderstaande uit. Bij
+            assets is het mapje HoloToolKit verschenen.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_5.png" alt="Selecteer package"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Unity is in de basis een programma om games te maken, die gespeeld worden op een
+            beeldscherm. De camera staat dan al zo ingesteld. Dit moeten we aanpassen. We
+            verwijderen 'Main Camera'.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_delete_main_camera.png" alt="Remove main camera"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Wanneer dat gedaan is, gaan we de HoloLens camera toevoegen. Dit wordt de Point of
+            View van jouw applicatie. We gaan hiervoor gebruik maken van de HoloToolkit. Ga naar
+            'Assets/HoloToolkit/Input/Prefabs' folder en sleep HoloLensCamera naar de plek waar de
+            Main Camera stond. Directional Light mag blijven staan.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_select_hololens_camera.png" alt="Remove main camera"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/unity_dragged_hololens_camera.png" alt="Remove main camera"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span class="cursief">We gaan nu de scene opslaan.</span> Wat scenes zijn, gaan we
+            jullie later uitleggen. Druk op <span class="nadruk">ctrl + (shift +) s</span> of ga
+            naar <span class="nadruk">File ->Save scene (As)</span>. Maak een mapje aan in
+            <span class="cursief">Assets</span> aan en noem deze <span class="cursief">
+            Scenes</span>. Geef je scene een naam (bijvoorbeeld MijnEersteScene).
+            </span>
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_saveAs.png" alt="Save As"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/unity_Assets.png" alt="Mapstructuur"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <span class="uitzoeken">
+                Voordat we 3D-modellen gaan toevoegen, moeten we nog een laatste stap doen. We
+                drukken in de menubalk bovenaan op <span class="nadruk">Mixed Reality Toolkit ->
+                Configure -> Apply Mixed Reality Project Settings</span>. Achter de schermen is de
+                applicatie nu in orde gemaakt voor de Microsoft Store.
+            </span>
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_mr_settings.png" alt="Mixed Reality Tookit"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+
+    </ol>
+
+    <h3 id="h12">1.2: 3D Modellen toevoegen</h3>
+    <p>
+        Je hebt nu je project zo gemaakt dat je ermee kan werken voor de HoloLens. Veel van deze
+        stappen zijn <span class="nadruk">projectwide</span>. Deze hoef je dus niet bij elke scene
+        te doen. Hieronder gaan we 3D-modellen toevoegen aan de applicatie.
+    </p>
+    <ol>
+        <li>
+            Mixed Reality projecteert in je echte omgeving, we willen dan ook dat er geen
+            achtergrond is (in dit geval). We gaan naar <span class="cursief">inspector</span> en
+            geven de property <span class="cursief">Clear Flags</span> onder
+            <span class="nadruk">camera</span> de waarde <span class="cursief">Solid Color</span>.
+            Daarnaast drukken we op Background en geven deze de waarde
+            <span class="cursief">#00000000</span>. Je leest het goed zijn er er 8. De eerste zes
+            zijn voor de kleur en de laatste twee voor de doorschijnendheid.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_color_picker.png" alt="Colorpicker"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            We gaan nu vier verschillende 3D-modellen rondom de camera toevoegen. Druk met je
+            <span class="cursief">rechtermuisknop</span> binnenin je
+            <span class="cursief">hierarchy</span>. <span class="nadruk">3D Object -> Cube</span>.
+            Nu is de Inspector verandert naar die van de cube. Met transform kun je de cube
+            aanpassen. <span class="cursief">Position</span> past de positie aan,
+            <span class="cursief">Rotation</span> de rotatie en <span class="cursief">Scale</span>
+            de grootte.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_create_cube.png" alt="Create Cube"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/unity_inspector_cube.png" alt="New Inspector"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            We hebben zojuist de cube toegevoegd. De cube wordt echter direct op de camera geladen.
+            Voor deze oefening willen we dat niet. We gaan de cube dan ook verplaatsen. Dit kan
+            door het aanpassen van de XYZ op position onder transform. Als je naar het plaatje
+            hieronder kijkt, zie je dat De blauwe pijl oveernkomt met de Z-waarde, rood is X en
+            groen is y. We willen dat de cube 2 meter voor de camera komt te staan. We veranderen
+            dan ze z-waarde van 0 naar 2. <span class="cursief">We gaan ervanuit dat de camera
+            0,0,0 als positie heeft.</span>
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_xyz.png" alt="XYZ Cube"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/unity_cube_result.png" alt="Resultaat Cube"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Doe bovenstaande stap ook voor een <span class="cursief">Sphere, Capsule & Cylinder.
+            </span> Het resultaat zou er zoals onderstaand uit moeten zien.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_result_four.png" alt="Resultaat Four"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2 id="h2">2: Deployen van je Applicatie</h2>
+    <p>
+        Dit hoofdstuk beschrijft het bekijken van je HoloLens applicatie in zowel de emulator als op
+        de HoloLens. De eerste stappen zijn in beide gevallen hiervoor hetzelfde. Deze worden
+        besproken in hoofdstuk 2.1. Daarna die je de aanwijzingen van hoofdstuk 2.2
+        <span class="nadruk">of</span> hoofdstuk 2.3 op te volgen.</p>
+    <h3 id="h21">2.1: Gereedmaken voor deployment</h3>
+    <ol>
+        <li>
+            We drukken op <span class="nadruk">File -> Build Settings</span> of
+            <span class="nadruk">Ctrl + Shift + B</span>. Als eerste drukken we daar op
+            <span class="cursief">Add Open Scenes</span>. Selecteer bij <span class="nadruk">
+            Platform</span> <span class="cursief">Universal Windows Platform</span> en zorg dat de
+            rest overeen komt met de afbeelding hieronder. <span class="cursief">Development Build
+            </span> en <span class="cursief">Unity C# Projects</span> zorgen ervoor dat de C# code wordt
+            gemaakt en dat de applicatie later makkelijker debugged kan worden.
+            <ul class="imgList">
+                <li>
+                    <img src="img/les2/unity_build_settings.png" alt="Build Settings"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Druk op <span class="nadruk">Build</span>. Je kunt dan de locatie kiezen om dit project
+            op te slaan. Maak in de root-directory van je Unity Project een folder genaamd
+            <span class="cursief">App</span> aan en slecteer deze.
+            <br><span class="nadruk">Tip: </span>Als je de naam MyFirstTime als
+            projectnaam hebt aangehouden zoals uitgelegd in hoofdstuk 1, dan is dat de root map van
+            je project.
+            <ul class="imgList">
+                <li>
+                    <img src="img/les2/unity_makefolderapp_save.png" alt="Build Settings"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Nadat Unity klaar is met het builden en het genereren van de daarbij horende code, wordt
+            de root-folder in <span class="cursief">File Explorer</span> geopend. De inhoud zou er
+            ongeveer uit moeten zien als onderstaande. Links staat de root-folder. Rechts de
+            {root}/App folder. Je mag nu dubbelklikken op het SLN-bestand in de App folder. Deze
+            heet {projectnaam}.sln. Als het goed is, wordt het project nu geopend in Visual Studio.
+            <ul class="imgList">
+                <li>
+                    <img src="img/les2/unity_rootfolder.png" alt="Root Folder"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/les2/unity_rootSlashAppfolder.png" alt="Root/App Folder"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/les2/unity_vs_start.png" alt="Visual Studio"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Je dient nu naar het hoofdstuk <a href="#h22">Emulator</a> of <a href="#h23">HoloLens
+            </a> te gaan om de appplicatie te deployen.
+        </li>
+    </ol>
+    <h3 id="h22">2.2: Deployen naar Emulator</h3>
+    <p>Je hebt een HoloLens Applicatie opgezet in Unity en deze vervolgens gebuild als een Unity C#
+     project. Je hebt de applicatie kunnen openen met Visual Studio en wilt hem nu gaan deployen
+    naar de <span class="cursief">Emulator</span>.</p>
+
+    <ol>
+        <li>
+            We moeten nu de <span class="nadruk">Solution configuration</span> aanpassen naar:
+            <span class="cursief">Release</span>. De <span class="nadruk">Solution Platform</span>
+            naar <span class="cursief">x86</span> en de <span class="nadruk">Device</span> naar
+            <span class="cursief">HoloLens Emulator {versienummer}</span>. Zie de drie rode pijlen
+            het plaatje hieronder.
+            <ul class="imgList">
+                <li>
+                    <img src="img/les2/unity_vs_solution_config.png" alt="Solution Config"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Druk nu op het groene 'play' pijltje. De emulator zal opstarten.<br>
+            <span class="nadruk">Let op:</span> De emulator wordt eerst opgestart. Daarna wordt jouw
+            applicatie pas gedeployed naar de emulator. Het kan dus zijn dat je hem niet direct ziet
+            in het menu.<br>
+            <span class="nadruk">Let op:</span> De 3D-objecten zijn erg dichtbij de HoloLens camera
+            geplaatst. Na het openen zul je dan ook direct op een grijs model uitkijken. Kijk
+            hieromheen.
+            <ul class="imgList">
+                <li>
+                    <img src="img/les2/unity_emu_select_application.png" alt="Menu Start Select"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/les2/unity_emu_app_loading.png" alt="Windows Loading"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/les2/unity_emu_app_starting.png" alt="Unity Logo"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/les2/unity_emu_app_running.png" alt="App Running"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3 id="h23">2.3: Deployen naar Hololens</h3>
+    <p>Je hebt een HoloLens Applicatie opgezet in Unity en deze vervolgens gebuild als een Unity C#
+        project. Je hebt de applicatie kunnen openen met Visual Studio en wilt hem nu gaan deployen
+        naar de <span class="cursief">HoloLens</span>.</p>
+
+    <ol>
+        <li>
+            We moeten nu de <span class="nadruk">Solution configuration</span> aanpassen naar:
+            <span class="cursief">Release</span>. De <span class="nadruk">Solution Platform</span>
+            naar <span class="cursief">x86</span> en de <span class="nadruk">Device</span> naar
+            <span class="cursief">Remote Machine</span>.
+            <ul class="imgList">
+                <li>
+                    <img src="img/les2/unity_hl_vs_solution_config.png" alt="HL Solution Config"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Vervolgens krijg je onderstaand scherm. Met een beetje geluk vindt Visual Studio direct
+            de HoloLens, mocht dat niet zo zijn, dan gaan we handmatig het ip-adres invoeren in de
+            volgende stap.
+            <ul class="imgList">
+                <li>
+                    <img src="img/les2/vs_ipinvoeren.png" alt="Ip-adres invoeren"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Om het ip-adres te krijgen van de HoloLens gaan we naar <span class="cursief">Menu ->
+            Settings -> Network & Internet -> Advanced Options</span>
+            <ul class="imgList">
+                <li>
+                    <img src="img/les2/hl_settings_networkAndInternet_AdvOpt.jpg"
+                         alt="Ip-adres invoeren" onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Deze voeren we in, in het scherm bij stap 2. De eerste keer gaat de HoloLens om een code
+            vragen, deze haal je op door te gaan naar <span class="cursief">
+            Menu -> Update & Security -> For Developers -> Pair.</span> De code die je hier krijgt,
+            dient ingevoerd te worden in Visual Studio.
+            <ul class="imgList">
+                <li>
+                    <img src="img/les2/hl_updAndSec_fDev_Pair.jpg"
+                         alt="Ip-adres invoeren" onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Druk op de groene play knop in Visual Studio en de applicatie gaat verzonden worden
+            naar de HoloLens. Wacht tot deze gelezen is en open deze vervolgens via het menu. De 3D-
+            modellen zijn nogal groot, dus neem na het laden van de applicatie wat afstand om ze
+            goed te kunnen zien.
+        </li>
+    </ol>
+
+    <h2 id="hSlot">Slot</h2>
+    <p>
+        We hebben deze les gekeken naar het opzetten, deployen en runnen van je HoloLens project.
+        Volgende les gaan we ervoor zorgen dat je project online wordt opgeslagen met behulp van
+        versiebeheer. Microsoft heeft hier zijn eigen systeem voor en deze gaan we ook gebruiken.
+        Na volgende les kan het dan ook geen excuus meer zijn dat je werk weg is, want het zou
+        altijd in je remote repository opgeslagen moeten zijn.
+    </p>
+
+
+</div>
+
+
+<div class="bottom">
+    <p>&copy; ROC Midden Nederland</p>
+</div>
+
+<div id="overlay" onclick="closeOverlay()">
+
+</div>
+<script src="../js/js.js"></script>
+</body>
+</html>

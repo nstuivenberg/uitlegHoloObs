@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excellentieprogramma - HoloLens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="shortcut icon" href="http://www.rocmn.nl/themes/custom/rocmn/favicon.ico"
+          type="image/vnd.microsoft.icon">
+</head>
+<body>
+
+
+<nav class="toppie" id="myTopNav">
+    <a href="#" style="padding:2px; padding-left: 14px;">
+        <img src="../img/ROCWhite.svg" style="min-width: 77px; max-width: 77px;">
+    </a>
+    <a href="#">Installatie</a>
+    <a href="#">Eerste Project</a>
+    <a href="#">Deployen</a>
+    <a href="#">Version Control</a>
+    <a href="#">Spatial Mapping</a>
+    <a href="javascript:void(0);" style="font-size:17px;" class="icon" onclick="myFunction()">
+        &#9776;
+    </a>
+
+</nav>
+
+<div class="main">
+    <h1>Titel van de pagina</h1>
+
+    <p>Deze pagina beschrijft ...</p>
+
+
+    <h2>Subtitel 1</h2>
+    <p>Inleiding subtitel</p>
+    <ol>
+        <li>
+            Als eerste gaan we een nieuw project maken. Dat doen we door op
+        'new' te drukken.
+
+        <ul class="imgList">
+            <li>
+                <img src="img/unity_1.png" alt="Selecteer new"
+                  onclick="overlay(this)" class="listImg">
+            </li>
+        </ul>
+        </li>
+        <li>Geef het project een naam en kies de locatie waar je het project wilt opslaan. Zorg
+            dat de overige setings zoals hieronder zijn.
+        <ul class="imgList">
+            <li>
+                <img src="img/unity_2.png" alt="Project settings" onclick="overlay(this)"
+                     class="listImg">
+            </li>
+        </ul>
+        </li>
+        <li>
+            Als het goed is, bestaat je Unity-omgeving uit drie onderdelen. Links je 'Hierarchy',
+            in het midden 'Game', 'Animator' en 'Animation', en rechts 'Inspector' en 'Services'.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_three_parts.png" alt="Remove main camera"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+            <ul>
+                <li><span class="cursief">Hierarchy</span> laat de visuele elementen van je scene
+                    zien.</li>
+                <li><span class="cursief">Game </span>laat zien hoe de game gerenderd wordt. </li>
+                <li><span class="cursief">Het scene paneel</span> laat de elementen zien die je in
+                    de 3D wereld hebt geplaatst. Deze kun je onder andere hier aanpassen.</li>
+                <li><span class="cursief">De services</span> laten Unity gerelateerde services zien.
+                    Dit paneel is gloednieuw. Misschien krijgt deze bruikbare features in de
+                    toekomst.</li>
+                <li><span class="cursief">Inspector</span> geeft de mogelijkheid om de geselecteerde
+                    elementen aan te passen.</li>
+            </ul>
+        </li>
+        <li>
+            Om voor je HoloLens te ontwikkelen heeft Microsoft een toolkit ontwikkelt die het
+            ontwikkelen voor de o.a. de HoloLens makkelijker maakt. Deze kun je
+            <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases/">hier</a>
+            downloaden.
+        </li>
+        <li>Het zojuist gedownloade package gaan we nu in Unity importen. Druk op Assets ->
+            Import package -> Custom package. Selecteer het zojuist gedownloaden bestand.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_3.png" alt="Selecteer package"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Na het uitpakken vraagt Unity welke package je wilt importeren. Je moet hier alle
+            packages importen.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_4_extern.png" alt="Selecteer package"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Als alles is uitgepakt en geinstalleerd, ziet je Unity er zoals onderstaande uit. Bij
+            assets is het mapje HoloToolKit verschenen.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_5.png" alt="Selecteer package"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Unity is in de basis een programma om games te maken, die gespeeld worden op een
+            beeldscherm. De camera staat dan al zo ingesteld. Dit moeten we aanpassen. We
+            verwijderen 'Main Camera'.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_delete_main_camera.png" alt="Remove main camera"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Wanneer dat gedaan is, gaan we de HoloLens camera toevoegen. Dit wordt de Point of
+            View van jouw applicatie. We gaan hiervoor gebruik maken van de HoloToolkit. Ga naar
+            'Assets/HoloToolkit/Input/Prefabs' folder en sleep HoloLensCamera naar de plek waar de
+            Main Camera stond. Directional Light mag blijven staan.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_select_hololens_camera.png" alt="Remove main camera"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/unity_dragged_hololens_camera.png" alt="Remove main camera"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span class="cursief">We gaan nu de scene opslaan.</span> Wat scenes zijn, gaan we
+            jullie later uitleggen. Druk op <span class="nadruk">ctrl + (shift +) s</span> of ga
+            naar <span class="nadruk">File ->Save scene (As)</span>. Maak een mapje aan in
+            <span class="cursief">Assets</span> aan en noem deze <span class="cursief">
+            Scenes</span>. Geef je scene een naam (bijvoorbeeld MijnEersteScene).
+        </span>
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_saveAs.png" alt="Save As"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/unity_Assets.png" alt="Mapstructuur"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <span class="uitzoeken">
+                Voordat we 3D-modellen gaan toevoegen, moeten we nog een laatste stap doen. We
+                drukken in de menubalk bovenaan op <span class="nadruk">Mixed Reality Toolkit ->
+                Configure -> Apply Mixed Reality Project Settings</span>. Achter de schermen is de
+                applicatie nu in orde gemaakt voor de Microsoft Store.
+            </span>
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_mr_settings.png" alt="Mixed Reality Tookit"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+
+    </ol>
+    <h2>3D modellen toevoegen</h2>
+    <p>
+        Je hebt nu je project zo gemaakt dat je ermee kan werken voor de HoloLens. Veel van deze
+        stappen zijn <span class="nadruk">projectwide</span>. Deze hoef je dus niet bij elke scene
+        te doen. Hieronder gaan we 3D-modellen toevoegen aan de applicatie.
+    </p>
+    <ol>
+        <li>
+            Mixed Reality projecteert in je echte omgeving, we willen dan ook dat er geen
+            achtergrond is (in dit geval). We gaan naar <span class="cursief">inspector</span> en
+            geven de property <span class="cursief">Clear Flags</span> onder
+            <span class="nadruk">camera</span> de waarde <span class="cursief">Solid Color</span>.
+            Daarnaast drukken we op Background en geven deze de waarde
+            <span class="cursief">#00000000</span>. Je leest het goed zijn er er 8. De eerste zes
+            zijn voor de kleur en de laatste twee voor de doorschijnendheid.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_color_picker.png" alt="Colorpicker"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            We gaan nu vier verschillende 3D-modellen rondom de camera toevoegen. Druk met je
+            <span class="cursief">rechtermuisknop</span> binnenin je
+            <span class="cursief">hierarchy</span>. <span class="nadruk">3D Object -> Cube</span>.
+            Nu is de Inspector verandert naar die van de cube. Met transform kun je de cube
+            aanpassen. <span class="cursief">Position</span> past de positie aan,
+            <span class="cursief">Rotation</span> de rotatie en <span class="cursief">Scale</span>
+            de grootte.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_create_cube.png" alt="Create Cube"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/unity_inspector_cube.png" alt="New Inspector"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            We hebben zojuist de cube toegevoegd. De cube wordt echter direct op de camera geladen.
+            Voor deze oefening willen we dat niet. We gaan de cube dan ook verplaatsen. Dit kan
+            door het aanpassen van de XYZ op position onder transform. Als je naar het plaatje
+            hieronder kijkt, zie je dat De blauwe pijl oveernkomt met de Z-waarde, rood is X en
+            groen is y. We willen dat de cube 2 meter voor de camera komt te staan. We veranderen
+            dan ze z-waarde van 0 naar 2. <span class="cursief">We gaan ervanuit dat de camera
+            0,0,0 als positie heeft.</span>
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_xyz.png" alt="XYZ Cube"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+                <li>
+                    <img src="img/unity_cube_result.png" alt="Resultaat Cube"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+        <li>
+            Doe bovenstaande stap ook voor een <span class="cursief">Sphere, Capsule & Cylinder.
+            </span> Het resultaat zou er zoals onderstaand uit moeten zien.
+            <ul class="imgList">
+                <li>
+                    <img src="img/unity_result_four.png" alt="Resultaat Four"
+                         onclick="overlay(this)" class="listImg">
+                </li>
+            </ul>
+        </li>
+
+        <h2>Slot</h2>
+        <p>
+            Hier eindigen we dit hoofdstuk. In het volgende hoofdstuk gaan we je laten zien hoe je
+            de applicatie in de HoloLens Emulator en op de HoloLens kunt laten draaien.
+        </p>
+    </ol>
+</div>
+
+<div class="bottom">
+    <p>&copy; ROC Midden Nederland</p>
+</div>
+
+<div id="overlay" onclick="closeOverlay()">
+
+</div>
+<script src="../js/js.js"></script>
+</body>
+</html>
